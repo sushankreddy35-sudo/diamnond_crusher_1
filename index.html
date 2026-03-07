@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamond Crusher</title>
+
+<style>
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:2px;
+    font-family:Arial;
+}
+
+
+.main{
+    width:100vw;
+    height:600vh;
+    background-color:#0b3d5c;
+    position:relative;
+   
+}
+
+
+.image1{
+			 top:5vh;
+			 left:2vw;
+            position:absolute;
+		}
+
+
+.sub1{
+    top:13vh;
+    left:20vw;
+    width:fit-content;
+    list-style:none;
+    position:relative;
+    background:white;
+    display:flex;
+    align-items:center;
+    text-align: center;
+    z-index:1000;
+    transition:all 0.4s ease;
+}
+
+.sub1.scrolled{
+    background:rgba(255,255,255,0.95);
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    backdrop-filter:blur(8px);
+}
+
+.sub1 li{position:relative;}
+
+.sub1 a{
+    color:black;
+    text-decoration:none;
+    padding:10px 40px;
+    display:block;
+    transition:all 0.3s ease;
+}
+
+.sub1 a:hover{
+    background:orange;
+    color:white;
+    transform:scale(1.05);
+}
+
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    list-style:none;
+    padding:10px;
+    margin:0;
+    min-width:180px;
+    background:white;
+    opacity:0;
+    transform:translateY(10px);
+    transition:all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+.section{
+    background:white;
+    margin:30px auto;
+    border-radius:10px;
+    padding:40px;
+    box-shadow:0px 3px 10px rgba(0,0,0,0.1);
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 0.8s ease;
+    align-items: center;
+    text-align: center;
+}
+
+.section.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.images{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+    align-items: center;
+}
+
+.images img{
+    width:32%;
+    border-radius:8px;
+    transition:all 0.5s ease;
+    cursor:pointer;
+    align-items: center;
+}
+
+.images img:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+.products, .manufacturing{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    align-items: center;
+}
+
+.card{
+    flex:1 1 300px;
+    background:#f9fafb;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    transition:all 0.4s ease;
+    cursor:pointer;
+    align-items: center;
+    text-align: center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card img{
+    width:50%;
+    border-radius:8px;
+    transition:transform 0.6s ease;
+    align-items: center;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+
+footer{
+    background:#0b3d5c;
+    color:black;
+    text-align:center;
+    padding:20px;
+}
+
+
+#demo{
+    width:200px;
+    height:300px;
+    position:absolute;
+    top:2vh;
+    right:10vw;
+}
+
+
+		.a{
+	top:34vh;
+	position:absolute;
+	left:4vw;
+	width:700px;
+    
+    border-radius: 10px;
+	
+	
+	
+}
+.b{
+	top:30vh;
+	position:absolute;
+	right:4vw;
+	width:700px;
+}
+.c{
+	top:130vh;
+	position:absolute;
+	left:4vw;
+	width:1400px;
+	height:400px;
+	background-color: white;
+	align-items: center;
+    text-align: center;
+}
+
+.d{
+	top:200vh;
+	position:absolute;
+	right:4vw;
+	width:700px;
+	height:400px;
+	
+	align-items: center;
+
+}
+.e{
+		top:205vh;
+	position:absolute;
+	left:4vw;
+	width:700px;
+	
+	
+	align-items: center;
+
+}
+
+.f{
+		top:420vh;
+	position:absolute;
+	left:4vw;
+	width:1400px;
+	
+	
+	align-items: center;
+
+
+}
+
+.h{
+	top:530vh;
+	position:absolute;
+	left:4vw;
+	width:700px;
+}
+
+
+.i{
+    position:absolute;
+    top:550vh;
+    right:4vw;
+    width:600px;
+	
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+
+
+.social-bar{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+}
+
+
+
+.social{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:15px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    font-size:16px;
+    transition:all 0.4s ease;
+}
+
+.social i{
+    font-size:18px;
+}
+
+
+.social:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+.whatsapp{ background:#25D366; }
+.facebook{ background:#4267B2; }
+.phone{ background:#1abc9c; }
+.instagram{ background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); }
+.youtube{ background:#FF0000; }
+.linkedin{ background:#0077B5; }
+
+
+@media(max-width:768px){
+    .i{
+        width:90%;
+        right:5%;
+        padding:20px;
+    }
+
+    .social-bar{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+
+.contact-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    padding:50px 20px;
+    border-radius:15px;
+    max-width:900px;
+    margin:50px auto;
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+.contact-logo img{
+    width:250px;
+    margin-bottom:30px;
+}
+
+.contact-details{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-item{
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+
+.contact-item a{
+    text-decoration:none;
+    color:#0b3d5c;
+    font-weight:600;
+    transition:all 0.3s ease;
+}
+
+.contact-item a:hover{
+    color:orange;
+    transform:scale(1.05);
+}
+
+.icon{
+    font-size:22px;
+}
+
+
+	
+
+
+</style>
+</head>
+
+<body>
+
+<div class="main">
+
+
+<div class="image1">
+<img width="200" height="150"
+src="https://diamondcrusher.in/wp-content/uploads/2024/02/cropped-cropped-Final-logo-PNG-1024x723.png">
+</div>
+
+<p id="demo"></p>
+
+
+<ul class="sub1">
+
+<li class="dropdown">
+<a href="#"><h2>About us ▼</h2></a>
+<ul class="dropdown-menu">
+<li><a href="legacy.html">legacy and expertise</a></li>
+<li><a href="why_diamond.html">why diamond</a></li>
+<li><a href="manufacturing.html">manyfacturing</a></li>
+<li><a href="company.html">contact us</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#"><h2>Products ▼</h2></a>
+<ul class="dropdown-menu">
+<li><a href="jaw.html">Jaw Crusher</a></li>
+<li><a href="cone.html">Cone Crusher</a></li>
+<li><a href="vsi.html">VSI</a></li>
+<li><a href="screens.html">Screens</a></li>
+<li><a href="feeders.html">Feeders</a></li>
+<li><a href="static.html">Static Plants (50 - 500 TPH)</a></li>
+<li><a href="wheeled.html">Wheeled Plants</a></li>
+<li><a href="combo.html">Combo Plants</a></li>
+<li><a href="wash.html">Wash Plants</a></li>
+<li><a href="cd.html">C&D</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#"><h2>After Sales ▼</h2></a>
+<ul class="dropdown-menu">
+<li><a href="errection.html">Errection and Commissioning</a></li>
+<li><a href="Network.html">Service Network</a></li>
+<li><a href="parts.html">Parts</a></li>
+<li><a href="refurbishment.html">Refurbishment</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#"><h2>Events ▼</h2></a>
+<ul class="dropdown-menu">
+<li><a href="Excon.html">Excon 2023</a></li>
+<li><a href="bauma.html">BAUMA CONEXPO 2024</a></li>
+<li><a href="Customer.html">Customer Meets</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="blogs.html"><h2>Blogs</h2></a>
+</li>
+
+</ul>
+
+<div class="sub2">
+			<section class="hero">
+   
+<div class="a">
+
+<div class="container section">
+<h2>Company Introduction</h2>
+
+<p>
+Diamond Crusher, operated by Titan Crushing Equipment LLP, is a leading Indian
+manufacturer of crushing and screening equipment used in construction,
+mining, infrastructure, and material processing industries.
+With over 60 years of experience, the company delivers reliable,
+high-performance machinery that converts large rocks into usable
+construction materials like sand, gravel, and crushed stone.
+</p>
+
+<div class="images">
+<img src="https://diamondcrusher.in/wp-content/uploads/2023/10/Smart-Plants-min.jpg"alt="">
+<img src="https://joyalcrusher.com/uploads/solutions/solu-ban-granite.jpg"alt="">
+<img src="https://diamondcrusher.in/wp-content/uploads/2023/10/XL-Plants-min.jpg"alt="">
+</div>
+</div>
+</div>
+
+
+<div class="b">
+
+
+
+<div class="container section">
+<h2>What the Company Does</h2>
+
+<ul>
+<h4>Machine Design & Engineering:</h4><p> creating machines using technical knowledge and engineering methods to ensure high performance, efficiency, and durability.</p>
+<h4>Manufacturing & Assembly:</h4><p>Producing machine parts and assembling them together to build complete equipment ready for operation.</p>
+<h4>Installation & Commissioning:</h4><p>Setting up machines at the customer’s site and testing them to make sure they work properly and safely before use.</p>
+<h4>Maintenance & After-Sales Support:</h4><p>Providing regular servicing, repairs, spare parts, and technical assistance to keep machines running smoothly after purchase.</p>
+<h4>Turnkey Crushing Plant Solutions:</h4><p>Delivering complete crushing plants from design to final operation, where the company handles everything and provides a ready-to-use system.</p>
+</ul>
+
+</div>
+</div>
+
+<div class="c">
+
+<section class="elementor-section elementor-top-section elementor-element elementor-element-6f866f5 elementor-section-full_width elementor-section-height-default elementor-section-height-default wpr-particle-no wpr-sticky-section-no" data-id="6f866f5" data-element_type="section" data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-696c1e5" data-id="696c1e5" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-dc0312d elementor-widget elementor-widget-video" data-id="dc0312d" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/M091Bo4x61Y&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-wrapper elementor-open-inline">
+			<iframe class="elementor-video" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Titan Crushing Equipment LLP Corporate Showcase | Engineering the Future" width="640" height="360" src="https://www.youtube.com/embed/M091Bo4x61Y?controls=1&amp;rel=0&amp;playsinline=0&amp;cc_load_policy=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fdiamondcrusher.in&amp;widgetid=1&amp;forigin=https%3A%2F%2Fdiamondcrusher.in%2F%3Ffbclid%3DIwVERDUAP-goVleHRuA2FlbQIxMABzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR4nEpPGc1gCFpVkwLFnbRMidYr65NXAr9JiVmq_fDJk6V2-fwMhP8m47vqp2A_aem_4qWeUHkxD34Q-lZV38U0aw%23&amp;aoriginsup=1&amp;vf=1" id="widget2"></iframe>		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+
+</div>		
+
+<div class="d">
+
+
+<!-- PRODUCTS -->
+<div class="container section">
+<h2>Key Products & Equipment</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://th.bing.com/th/id/OIP.CPG8lQ3V53gEQ351QJ70WgHaJ4?w=152&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"alt="">
+<h3>Jaw Crushers</h3>
+<p>Primary crushing machines used to break large rocks into smaller pieces for mining and construction industries.</p>
+</div>
+
+<div class="card">
+<img src="https://image.made-in-china.com/2f0j00hscBrTfdrwbV/Primary-Stone-Jaw-Crusher-for-Quarry-Concrete-Aggregates-Black-Rock-Iron-Gold-Copper-Ore-Crushing-PE2436-.webp">
+<h3>Cone Crushers</h3>
+<p>Secondary and tertiary crushers producing fine aggregates for asphalt and concrete production.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn.prod.website-files.com/6282f231d63be2370d0c17ef/62982cc1f8bcef4887836585_20211011_124214.jpg">
+<h3>Mobile Crushing Plants</h3>
+<p>Portable crushing systems designed for flexible operations and quick installation.</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="e">
+
+
+
+<div class="container section">
+<h2>Engineering & Manufacturing</h2>
+<div class="manufacturing">
+
+
+<div class="card">
+	<img src="https://th.bing.com/th/id/OIP.vwZ2tHeapEYOWjSSLXfNPQHaEJ?w=319&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="">
+<h3>Advanced fabrication facilities</h3>
+<p>Metal cutting using CNC or laser machines,
+
+Welding and joining heavy steel structures,
+
+Machine shaping and bending of metal plates,
+
+Precision machining of crusher components,
+
+Assembly of industrial equipment,
+
+Quality inspection and testing</p>
+</div>
+<div class="card">
+	<img src="https://th.bing.com/th?q=Precision+Machining+Technology+Images&w=120&h=120&c=1&rs=1&qlt=70&o=7&cb=1&dpr=1.3&pid=InlineBlock&rm=3&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"alt="">
+<h3>Precision machining processes</h3>
+<p>It is the process of shaping metal components using specialized machines so that every part fits perfectly and works smoothly without errors.</p>
+</div>
+<div class="card">
+	<img src="https://th.bing.com/th/id/OIP.8jmvyvpYHmM5KK2hEtetuAHaE8?w=225&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"alt="">
+<h3>Stringent quality control</h3>
+<p>Raw materials are inspected before production,
+
+Parts are checked during manufacturing,
+
+Machines are tested after assembly,
+
+Performance and safety tests are conducted,
+
+Final inspection before delivery</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="f">
+
+
+
+
+<div class="container section">
+<h2>Industries We Serve</h2>
+<div class="manufacturing">
+	<p>Diamond inbuilt ability, intelligence, and expertise to cater various
+		types of applications has always delivered an edge to its customers.
+		The demand for aggregate and sand will vary in nature and scale as per
+		the end applications. Diamond crushing equipment and plants are designed
+		 and produced to meet these dynamic demands. Be with Diamond to be dynamic.</p>
+
+	
+<div class="card">
+<img width="100" height="100"  src="https://diamondcrusher.in/wp-content/uploads/2023/10/commercial-1-min.jpg"alt="">
+<h3>
+Commercial</h3>
+
+</div>
+
+<div class="card">
+<img width="100" height="100"src="https://diamondcrusher.in/wp-content/uploads/2023/10/Road-4-min.jpg"alt="">
+<h3>Road</h3>
+</div>
+
+<div class="card">
+<img width="100" height="100"src="https://diamondcrusher.in/wp-content/uploads/2023/10/Rail-3-min.jpg">
+<h3>Rail</h3>
+</div>
+<div class="card">
+<img width="100" height="150" src="https://diamondcrusher.in/wp-content/uploads/2023/10/Infra-2-min.jpg">
+<h3>Infrastructure</h3>
+</div>
+<div class="card">
+<img width="100" height="150" src="https://diamondcrusher.in/wp-content/uploads/2023/10/Sand-1-min.jpg">
+<h3>Sand</h3>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+		</div>
+
+        <div class="h">
+		<div class="contact-section">
+
+    
+    <div class="contact-logo">
+        <a href="https://diamondcrusher.in/">
+            <img src="https://diamondcrusher.in/wp-content/uploads/2024/07/images.png" 
+                 alt="Diamond Crusher Logo">
+        </a>
+    </div>
+
+    
+    <div class="contact-details">
+
+        <div class="contact-item">
+            <span class="icon">📍</span>
+            <a href="https://maps.app.goo.gl/wGxjmmc4hQvafs3XA" target="_blank">
+                Sector 15, CBD Belapur, Navi Mumbai, Maharashtra 400614
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <span class="icon">✉️</span>
+            <a href="mailto:sales@diamondcrusher.in">
+                sales@diamondcrusher.in
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <span class="icon">📞</span>
+            <a href="tel:+918108844415">
+                +91 81088 44415
+            </a>
+        </div>
+
+    </div>
+	</div>
+
+</div>
+
+<div class="i">
+	
+<div class="social-bar">
+
+    <a href="https://api.whatsapp.com/send?phone=918108844415" target="_blank" class="social whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <a href="https://www.facebook.com/diamondcrushers01/" target="_blank" class="social facebook">
+        <i class="fab fa-facebook-f"></i>
+        <span>Facebook</span>
+    </a>
+
+    <a href="tel:918108844415" class="social phone">
+        <i class="fas fa-phone"></i>
+        <span>Call Us</span>
+    </a>
+
+    <a href="https://www.instagram.com/diamond.crushers/" target="_blank" class="social instagram">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+    </a>
+
+    <a href="https://www.youtube.com/channel/UC-1BqOOi8fWD0q4yeUq7sYg" target="_blank" class="social youtube">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/diamond-crushers-9828b11b7/" target="_blank" class="social linkedin">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+    </a>
+
+</div>
+</div>
+		
+
+</div>
+
+
+
+<script>
+
+
+window.addEventListener("scroll", function(){
+    let navbar = document.querySelector(".sub1");
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+});
+
+
+function revealSections(){
+    let sections = document.querySelectorAll(".section");
+
+    sections.forEach(section=>{
+        let windowHeight = window.innerHeight;
+        let elementTop = section.getBoundingClientRect().top;
+        let elementBottom = section.getBoundingClientRect().bottom;
+
+        if(elementTop < windowHeight - 100 && elementBottom > 100){
+            section.classList.add("active");
+        } else {
+            section.classList.remove("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
+
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en'}, 'demo');
+}
+</script>
+
+</body>
+</html>
