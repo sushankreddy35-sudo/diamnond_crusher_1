@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +14,19 @@ html{
 }
 
 body{
-    margin:2px;
+    
+     margin:2px;
     font-family:Arial;
+    overflow-x:hidden;
 }
 
 
 .main{
-    width:120%;
-    height:600vh;
+    width:102%;
+    min-height:600vh;
     background-color:#0b3d5c;
     position:relative;
-   
+    overflow-x:hidden;
 }
 
 
@@ -211,6 +214,7 @@ width:95%;
 	background-color: white;
 	align-items: center;
     text-align: center;
+    border-radius: 20px;
 }
 
 .d{
@@ -372,9 +376,7 @@ width:95%;
 }
 
 
-
-
-	/* MOBILE RESPONSIVE FIX */
+/* MOBILE RESPONSIVE FIX */
 
 @media (max-width:768px){
 
@@ -446,8 +448,7 @@ width:95%;
 
 
 
-
-	/* ================= MOBILE FIX ================= */
+/* ================= MOBILE FIX ================= */
 
 @media screen and (max-width:768px){
 
@@ -545,107 +546,24 @@ width:95%;
 }
 
 }
+
+
+@media (max-width:768px){
+
+.a,.b,.c,.d,.e,.f,.h,.i{
+position:relative;
+top:auto;
+left:auto;
+right:auto;
+width:90%;
+margin:30px auto;
+}
+
+}
+
+
 	
 
-
-	/* ================= MOBILE FIX ================= */
-
-@media screen and (max-width:768px){
-
-body{
-margin:0;
-overflow-x:hidden;
-}
-
-.main{
-height:auto;
-width:100%;
-}
-
-/* navbar */
-
-.sub1{
-flex-direction:column;
-width:95%;
-margin:auto;
-left:0;
-top:120px;
-}
-
-/* LOGO */
-
-.image1{
-position:relative;
-top:10px;
-left:10px;
-}
-
-/* SECTION POSITION FIX */
-
-.a,.b,.c,.d,.e,.f,.h,.i{
-position:relative;
-top:auto;
-left:auto;
-right:auto;
-width:95%;
-margin:30px auto;
-}
-
-/* IMAGE GRID */
-
-.images{
-flex-direction:column;
-align-items:center;
-}
-
-.images img{
-width:95%;
-}
-
-/* PRODUCTS */
-
-.products{
-flex-direction:column;
-align-items:center;
-}
-
-.card{
-width:95%;
-}
-
-/* MANUFACTURING */
-
-.manufacturing{
-flex-direction:column;
-align-items:center;
-}
-
-/* YOUTUBE VIDEO */
-
-iframe{
-width:100%;
-height:220px;
-}
-
-/* SOCIAL LINKS */
-
-.social-bar{
-grid-template-columns:1fr 1fr;
-}
-
-/* CONTACT SECTION */
-
-.contact-section{
-width:95%;
-}
-
-/* REMOVE LARGE WIDTH */
-
-.c{
-width:95%;
-}
-
-}
 
 </style>
 </head>
@@ -1033,9 +951,4 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'demo');
 </script>
 
 </body>
-
 </html>
-
-
-
-
