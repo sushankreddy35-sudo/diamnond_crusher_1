@@ -605,6 +605,55 @@ align-items:center;
 
 }
 
+	/* MOBILE FIX */
+
+@media screen and (max-width:768px){
+
+.main{
+height:auto;
+min-height:auto;
+}
+
+/* Remove absolute positioning for mobile */
+
+.a,.b,.c,.d,.e,.f,.h,.i{
+position:relative !important;
+top:auto !important;
+left:auto !important;
+right:auto !important;
+width:92%;
+margin:40px auto;
+}
+
+/* fix product layout */
+
+.products{
+flex-direction:column;
+align-items:center;
+}
+
+/* fix manufacturing cards */
+
+.manufacturing{
+flex-direction:column;
+align-items:center;
+}
+
+/* fix industries grid */
+
+.industry-grid{
+grid-template-columns:1fr 1fr;
+}
+
+/* fix video */
+
+.c iframe{
+width:100%;
+height:220px;
+}
+
+}
+
 
 </style>
 </head>
@@ -993,4 +1042,5 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'demo');
 
 </body>
 </html>
+
 
