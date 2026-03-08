@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,6 +125,7 @@ body{
     transition:all 0.5s ease;
     cursor:pointer;
     align-items: center;
+    height: auto; /* Added to maintain aspect ratio */
 }
 
 .images img:hover{
@@ -163,6 +163,7 @@ body{
     border-radius:8px;
     transition:transform 0.6s ease;
     align-items: center;
+    height: auto;
 }
 
 .card:hover img{
@@ -376,79 +377,7 @@ width:95%;
 }
 
 
-/* MOBILE RESPONSIVE FIX */
-
-@media (max-width:768px){
-
-.main{
-height:auto;
-padding-bottom:50px;
-}
-
-/* navbar */
-
-.sub1{
-flex-direction:column;
-width:95%;
-margin:auto;
-left:0;
-top:10vh;
-}
-
-/* sections */
-
-.a,.b,.c,.d,.e,.f,.h,.i{
-position:relative;
-top:auto;
-left:auto;
-right:auto;
-width:95%;
-margin:40px auto;
-}
-
-/* cards */
-
-.products,
-.manufacturing{
-flex-direction:column;
-align-items:center;
-}
-
-/* images */
-
-.images{
-flex-direction:column;
-align-items:center;
-}
-
-.images img{
-width:95%;
-}
-
-/* youtube video */
-
-iframe{
-width:100%;
-height:220px;
-}
-
-/* social icons */
-
-.social-bar{
-grid-template-columns:repeat(2,1fr);
-}
-
-/* contact section */
-
-.contact-section{
-width:95%;
-}
-
-}
-
-
-
-/* ================= MOBILE FIX ================= */
+/* ================= MOBILE RESPONSIVE FIX ================= */
 
 @media screen and (max-width:768px){
 
@@ -458,18 +387,18 @@ overflow-x:hidden;
 }
 
 .main{
-height:auto;
+height:auto; /* Changed from fixed height to auto */
 width:100%;
 }
 
 /* navbar */
 
 .sub1{
-flex-direction:column;
+flex-direction:column; /* Stack menu items vertically */
 width:95%;
 margin:auto;
 left:0;
-top:120px;
+top:10vh;
 }
 
 /* LOGO */
@@ -480,10 +409,11 @@ top:10px;
 left:10px;
 }
 
-/* SECTION POSITION FIX */
+/* SECTION POSITION FIX - CRITICAL CHANGE */
+/* This removes the absolute positioning that was causing overlap */
 
 .a,.b,.c,.d,.e,.f,.h,.i{
-position:relative;
+position:relative; /* Changed from absolute */
 top:auto;
 left:auto;
 right:auto;
@@ -670,7 +600,7 @@ construction materials like sand, gravel, and crushed stone.
 <ul>
 <h4>Machine Design & Engineering:</h4><p> creating machines using technical knowledge and engineering methods to ensure high performance, efficiency, and durability.</p>
 <h4>Manufacturing & Assembly:</h4><p>Producing machine parts and assembling them together to build complete equipment ready for operation.</p>
-<h4>Installation & Commissioning:</h4><p>Setting up machines at the customer’s site and testing them to make sure they work properly and safely before use.</p>
+<h4>Installation & Commissioning:</h4><p>Setting up machines at the customer's site and testing them to make sure they work properly and safely before use.</p>
 <h4>Maintenance & After-Sales Support:</h4><p>Providing regular servicing, repairs, spare parts, and technical assistance to keep machines running smoothly after purchase.</p>
 <h4>Turnkey Crushing Plant Solutions:</h4><p>Delivering complete crushing plants from design to final operation, where the company handles everything and provides a ready-to-use system.</p>
 </ul>
